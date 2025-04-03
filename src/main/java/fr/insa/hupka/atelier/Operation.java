@@ -14,4 +14,50 @@ public class Operation {
     private String refEquipement;
     private float dureeOperation;
     
+        //Constructeur
+
+    public Operation(String refOperation, String dOperation, String refEquipement, float dureeOperation) {
+        this.refOperation = refOperation;
+        this.dOperation = dOperation;
+        this.refEquipement = refEquipement;
+        this.dureeOperation = dureeOperation;
+    }
+    
+    //Getters
+
+    public String getRefOperation() {
+        return refOperation;
+    }
+
+    public String getdOperation() {
+        return dOperation;
+    }
+
+    public String getRefEquipement() {
+        return refEquipement;
+    }
+
+    public float getDureeOperation() {
+        return dureeOperation;
+    }
+    
+    
+    //Setters
+
+    public void setRefOperation(String refOperation) {
+        this.refOperation = refOperation;
+    }
+
+    public void setdOperation(String dOperation) {
+        this.dOperation = dOperation;
+    }
+
+    public void setRefEquipement(String refEquipement) {
+        this.refEquipement = refEquipement;
+    }
+
+    public void setDureeOperation(float dureeOperation) {
+        this.dureeOperation = dureeOperation;
+    }
+    
 }
