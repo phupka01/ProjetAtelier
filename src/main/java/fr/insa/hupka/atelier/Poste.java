@@ -5,6 +5,7 @@
 package fr.insa.hupka.atelier;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,5 +16,45 @@ public class Poste {
     private String refPoste;
     private String dPoste;
     private ArrayList<Machine> listeMachines;
+    
+    
+    //Constructeur
+
+    public Poste(String refPoste, String dPoste, ArrayList<Machine> listeMachines) {
+        this.refPoste = refPoste;
+        this.dPoste = dPoste;
+        this.listeMachines = listeMachines;
+    }
+    
+    
+    //Getters
+
+    public String getRefPoste() {
+        return refPoste;
+    }
+
+    public String getdPoste() {
+        return dPoste;
+    }
+
+    public ArrayList<Machine> getListeMachines() {
+        return listeMachines;
+    }
+    
+    
+    //Setters
+
+    public void setRefPoste(String refPoste) {
+        this.refPoste = refPoste;
+    }
+
+    public void setdPoste(String dPoste) {
+        this.dPoste = dPoste;
+    }
+
+    public void setListeMachines(ArrayList<Machine> listeMachines) {
+        this.listeMachines = listeMachines;
+    }
+    
     
 }
