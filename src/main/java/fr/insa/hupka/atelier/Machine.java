@@ -17,7 +17,7 @@ public class Machine {
     private float y;
 
     
-    
+    //Getters et Setter
     public String getRefMachine() {
         return refMachine;
     }
@@ -66,6 +66,16 @@ public class Machine {
         this.y = y;
     }
     
+    //Constructeur
+
+    public Machine(String refMachine, String dMachine, String type, float cout, float x, float y) {
+        this.refMachine = refMachine;
+        this.dMachine = dMachine;
+        this.type = type;
+        this.cout = cout;
+        this.x = x;
+        this.y = y;
+    }
     
     
 }
