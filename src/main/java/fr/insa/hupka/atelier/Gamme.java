@@ -50,10 +50,10 @@ public class Gamme {
     }
     //Méthodes
      //Méthodes de gestion
-    public void creerGamme(){
-        
-    }
+      public static void CreerGamme(String RefGamme, ArrayList<Operation> ListeOperations, ArrayList<Equipement> ListeEquipements){
+      //copier le constructeur ?
+      }
     public void modifierGamme(){
-        
+        //ouvrir une interface permettant 
     }    
 }
