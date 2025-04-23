@@ -54,6 +54,12 @@ public class Gamme {
       //copier le constructeur ?
       }
     public void modifierGamme(){
-        //ouvrir une interface permettant 
+        //ouvrir une interface permettant de modifier le contenu des gammes 
     }    
+    public void supprimerGamme() {
+        //???
+    }
+    public void AfficheGamme(Gamme GammeAffichee) {
+        //afficher la Gamme "GammeAffichee", sur javaFX
+    }
 }
