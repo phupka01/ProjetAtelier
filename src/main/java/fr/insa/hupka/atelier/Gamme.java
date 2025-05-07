@@ -62,4 +62,18 @@ public class Gamme {
     public void AfficheGamme(Gamme GammeAff) {
         System.out.println(GammeAff.getRefGamme());
     }
+    public static float coutGamme(Gamme Gamme){
+       ArrayList<Equipement> equipements = Gamme.getListeEquipements();
+       ArrayList<Operation> operations = Gamme.getListeOperations();
+       float duree = 0;
+       float cout = 0;
+       int i;
+       for (i=0; i<equipements.size(); i++){
+       }
+        
+        return duree*cout;
+    }
+    public float dureeGamme() {
+        return -1;
+    }
 }
