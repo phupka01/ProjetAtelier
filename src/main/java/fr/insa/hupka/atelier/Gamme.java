@@ -59,7 +59,7 @@ public class Gamme {
     public void supprimerGamme() {
         //???
     }
-    public void AfficheGamme(Gamme GammeAffichee) {
-        //afficher la Gamme "GammeAffichee", sur javaFX
+    public void AfficheGamme(Gamme GammeAff) {
+        System.out.println(GammeAff.getRefGamme());
     }
 }
