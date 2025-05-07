@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author phupka01
  */
-public class Poste {
+public class Poste extends Equipement {
     
     private String refPoste;
     private String dPoste;
@@ -20,11 +20,14 @@ public class Poste {
     
     //Constructeur
 
-    public Poste(String refPoste, String dPoste, ArrayList<Machine> listeMachines) {
+    public Poste(String refPoste, String dPoste, ArrayList<Machine> listeMachines, String refEquipement, String dEquipement) {
+        super(refEquipement, dEquipement);
         this.refPoste = refPoste;
         this.dPoste = dPoste;
         this.listeMachines = listeMachines;
     }
+
+    
     
     
     //Getters

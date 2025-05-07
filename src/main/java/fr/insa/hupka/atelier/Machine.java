@@ -8,7 +8,7 @@ package fr.insa.hupka.atelier;
  *
  * @author phupka01
  */
-public class Machine {
+public class Machine extends Equipement {
     private String refMachine;
     private String dMachine;
     private String type;
@@ -68,7 +68,8 @@ public class Machine {
     
     //Constructeur
 
-    public Machine(String refMachine, String dMachine, String type, float cout, float x, float y) {
+    public Machine(String refMachine, String dMachine, String type, float cout, float x, float y, String refEquipement, String dEquipement) {
+        super(refEquipement, dEquipement);
         this.refMachine = refMachine;
         this.dMachine = dMachine;
         this.type = type;
@@ -76,6 +77,9 @@ public class Machine {
         this.x = x;
         this.y = y;
     }
+
+    
+    }
     
     
-}
+
