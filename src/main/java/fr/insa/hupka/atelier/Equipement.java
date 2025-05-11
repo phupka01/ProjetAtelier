@@ -12,6 +12,8 @@ public class Equipement {
     //attributs
     private String refEquipement;
     private String dEquipement;
+    private float cout;
+    //Note : la méthode de calcul du coût sera définie par une méthode, qu'il sera possible de redéfinir dans les sous-classes Machine et Equipement !
     //Constructeur
     public Equipement(String refEquipement, String dEquipement) {
         this.refEquipement = refEquipement;
@@ -25,6 +27,12 @@ public class Equipement {
     public String getdEquipement() {
         return dEquipement;
     }
+
+    public float getCout() {
+        return cout;
+    }
+    
+    
     //Setters
 
     public void setRefEquipement(String refEquipement) {
@@ -34,5 +42,9 @@ public class Equipement {
     public void setdEquipement(String dEquipement) {
         this.dEquipement = dEquipement;
     }
-    
+
+    public void setCout(float cout) {
+        this.cout = cout;
+    }
+    //Une méthode de calcul du cout spéciale devra être ajoutée dans les classes Machine et Poste
 }

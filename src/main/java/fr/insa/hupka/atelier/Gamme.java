@@ -67,13 +67,28 @@ public class Gamme {
        ArrayList<Operation> operations = Gamme.getListeOperations();
        float duree = 0;
        float cout = 0;
+       Equipement currentequip;
+       Operation currentopera;
        int i;
        for (i=0; i<equipements.size(); i++){
+           currentequip = equipements.get(i);
+           cout = cout + currentequip.getCout();
        }
-        
-        return duree*cout;
+        for (i=0; i<operations.size(); i++){
+           currentopera = operations.get(i);
+           duree = duree + currentopera.getDureeOperation();   
+        }
+        return duree*cout; 
     }
-    public float dureeGamme() {
-        return -1;
+    public float dureeGamme(Gamme Gamme) {
+        ArrayList<Operation> operations = Gamme.getListeOperations();
+        float duree = 0;
+        int i;
+        Operation currentopera;
+        for (i=0; i<operations.size(); i++){
+           currentopera = operations.get(i);
+           duree = duree + currentopera.getDureeOperation();   
+        }
+        return duree;
     }
 }

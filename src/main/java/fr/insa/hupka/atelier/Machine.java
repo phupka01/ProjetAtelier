@@ -12,7 +12,6 @@ public class Machine extends Equipement {
     private String refMachine;
     private String dMachine;
     private String type;
-    private float cout;
     private float x;
     private float y;
 
@@ -41,15 +40,7 @@ public class Machine extends Equipement {
     public void setType(String type) {
         this.type = type;
     }
-
-    public float getCout() {
-        return cout;
-    }
-
-    public void setCout(float cout) {
-        this.cout = cout;
-    }
-
+    
     public float getX() {
         return x;
     }
@@ -68,12 +59,11 @@ public class Machine extends Equipement {
     
     //Constructeur
 
-    public Machine(String refMachine, String dMachine, String type, float cout, float x, float y, String refEquipement, String dEquipement) {
+    public Machine(String refMachine, String dMachine, String type, float x, float y, String refEquipement, String dEquipement) {
         super(refEquipement, dEquipement);
         this.refMachine = refMachine;
         this.dMachine = dMachine;
         this.type = type;
-        this.cout = cout;
         this.x = x;
         this.y = y;
     }
