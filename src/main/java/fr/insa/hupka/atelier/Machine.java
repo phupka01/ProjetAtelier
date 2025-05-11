@@ -67,7 +67,11 @@ public class Machine extends Equipement {
         this.x = x;
         this.y = y;
     }
-
+//Méthodes
+    public static float Calculcout(Machine Machine){
+        return -1;
+        //écrire ici la méthode de calcul du cout d'une machine
+    }
     
     }
     

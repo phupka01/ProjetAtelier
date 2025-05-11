@@ -58,6 +58,10 @@ public class Poste extends Equipement {
     public void setListeMachines(ArrayList<Machine> listeMachines) {
         this.listeMachines = listeMachines;
     }
-    
+    //méthodes
+    public static float CalculCout(){
+        return -1;
+        //écrire ici la méthode de calcul du cout d'un poste, probablement à partir du cout des machines qu'il contient.
+    }
     
 }
