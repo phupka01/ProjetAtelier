@@ -14,6 +14,7 @@ public class Machine extends Equipement {
     private String type;
     private float x;
     private float y;
+    private float cout;
 
     
     //Getters et Setter
@@ -56,6 +57,24 @@ public class Machine extends Equipement {
     public void setY(float y) {
         this.y = y;
     }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public float getCout() {
+        return cout;
+    }
+
+    /**
+     *
+     * @param cout
+     */
+    @Override
+    public void setCout(float cout) {
+        this.cout = cout;
+    }
     
     //Constructeur
 
@@ -69,7 +88,7 @@ public class Machine extends Equipement {
     }
 //Méthodes
     public static float Calculcout(Machine Machine){
-        return -1;
+        return Machine.getCout();
         //écrire ici la méthode de calcul du cout d'une machine
     }
     
