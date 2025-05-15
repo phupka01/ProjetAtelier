@@ -13,53 +13,33 @@ import java.util.logging.Logger;
  */
 public class Poste extends Equipement {
     
-    private String refPoste;
-    private String dPoste;
     private ArrayList<Machine> listeMachines;
     
     
     //Constructeur
 
-    public Poste(String refPoste, String dPoste, ArrayList<Machine> listeMachines, String refEquipement, String dEquipement) {
+    public Poste(ArrayList<Machine> listeMachines, String refEquipement, String dEquipement) {
         super(refEquipement, dEquipement);
-        this.refPoste = refPoste;
-        this.dPoste = dPoste;
         this.listeMachines = listeMachines;
     }
+
+    
 
     
     
     
     //Getters
-
-    public String getRefPoste() {
-        return refPoste;
-    }
-
-    public String getdPoste() {
-        return dPoste;
-    }
-
-    public ArrayList<Machine> getListeMachines() {
+    public ArrayList<Machine> getListeMachines(){
         return listeMachines;
     }
-    
-    
+
     //Setters
-
-    public void setRefPoste(String refPoste) {
-        this.refPoste = refPoste;
-    }
-
-    public void setdPoste(String dPoste) {
-        this.dPoste = dPoste;
-    }
-
     public void setListeMachines(ArrayList<Machine> listeMachines) {
         this.listeMachines = listeMachines;
     }
+
     //méthodes
-    public static float CalculCout(){
+    public static float CalculCout() {
         return -1;
         //écrire ici la méthode de calcul du cout d'un poste, probablement à partir du cout des machines qu'il contient.
     }
