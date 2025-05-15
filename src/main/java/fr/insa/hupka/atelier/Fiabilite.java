@@ -3,12 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package fr.insa.hupka.atelier;
-
-
-
+import java.util.Scanner;
+import java.io.File;
 /**
  *
- * @author llahorgue01
+ * @author llahorgue01 (eh ouais B-) )
  */
 public class Fiabilite {
    private Machine[] tbmachine = new Machine[50];
@@ -17,6 +16,8 @@ public class Fiabilite {
    private Operateur[] tboperateur = new Operateur[50];
    private char[] tbevent = new char[50];
    private String[] tbcause = new String[50];
+   File suivi = new File("C:\\Users\\llahorgue01\\Desktop");
+   Scanner scan = new Scanner(suivi);
    
    //Constructeur 
     //GetSet
