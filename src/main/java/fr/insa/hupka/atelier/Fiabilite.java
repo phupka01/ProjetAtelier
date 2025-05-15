@@ -4,7 +4,8 @@
  */
 package fr.insa.hupka.atelier;
 import java.util.Scanner;
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 /**
  *
  * @author llahorgue01 (eh ouais B-) )
@@ -16,8 +17,7 @@ public class Fiabilite {
    private Operateur[] tboperateur = new Operateur[50];
    private char[] tbevent = new char[50];
    private String[] tbcause = new String[50];
-   File suivi = new File("C:\\Users\\llahorgue01\\Desktop");
-   Scanner scan = new Scanner(suivi);
+   InputStream suivi = new FileInputStream("C:\\Users\\llahorgue01\\Documents\\NetBeansProjects\\ProjetAtelier\\src\\main\\java\\fr\\insa\\hupka\\atelier\\SuiviMaintenance.txt");
    
    //Constructeur 
     //GetSet
