@@ -5,7 +5,7 @@
 package fr.insa.hupka.atelier;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -59,9 +59,14 @@ public class Poste extends Equipement {
         this.listeMachines = listeMachines;
     }
     //méthodes
-    public static float CalculCout(){
-        return -1;
-        //écrire ici la méthode de calcul du cout d'un poste, probablement à partir du cout des machines qu'il contient.
+    public static float CalculCout(Poste Poste){
+        float couttotal = 0;
+        ArrayList<Machine> listemachines = Poste.getListeMachines();
+        int i;
+        for (i=0;i<listemachines.size();i++) {
+            couttotal = couttotal + listemachines.get(i).getCout();
+        }
+        return couttotal;
     }
     
 }
