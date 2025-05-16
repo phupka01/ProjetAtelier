@@ -3,9 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package fr.insa.hupka.atelier;
-import java.util.Scanner;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.FileReader;       
+import java.io.BufferedReader;
 /**
  *
  * @author llahorgue01 (eh ouais B-) )
@@ -17,8 +18,8 @@ public class Fiabilite {
    private Operateur[] tboperateur = new Operateur[50];
    private char[] tbevent = new char[50];
    private String[] tbcause = new String[50];
-   InputStream suivi = new FileInputStream("C:\\Users\\llahorgue01\\Documents\\NetBeansProjects\\ProjetAtelier\\src\\main\\java\\fr\\insa\\hupka\\atelier\\SuiviMaintenance.txt");
-   
+   private static BufferedReader reader = null;
+   private static String cheminacces;
    //Constructeur 
     //GetSet
     public Machine[] getTbmachine() {
@@ -69,7 +70,16 @@ public class Fiabilite {
         this.tbcause = tbcause;
     }
     //Méthodes
-
+public static void main(String[] args){
+    try {
+        reader = new BufferedReader(new FileReader(cheminacces));
+    }
+    catch(FileNotFoundException exc)
+    {
+     
+    }
+    
+}
     
    
 }
