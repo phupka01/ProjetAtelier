@@ -84,8 +84,9 @@ public static void main(String[] args){
     int k;
     for (i=0;i<4;i++){
         StringBuilder stringbuilder = new StringBuilder();
-        while ((k= reader.read() !=)) {
-            
+        
+        
+          
         }
         
     }
@@ -93,4 +94,4 @@ public static void main(String[] args){
 }
     
    
-}
+
