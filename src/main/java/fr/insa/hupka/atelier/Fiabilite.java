@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.FileReader;       
 import java.io.BufferedReader;
+import java.lang.StringBuilder;
 /**
  *
  * @author llahorgue01 (eh ouais B-) )
@@ -72,11 +73,21 @@ public class Fiabilite {
     //Méthodes
 public static void main(String[] args){
     try {
+        cheminacces = "SuiviMaintenance.txt";
         reader = new BufferedReader(new FileReader(cheminacces));
     }
     catch(FileNotFoundException exc)
     {
-     
+     System.out.println("Fichier non trouvé");
+    }
+    int i;
+    int k;
+    for (i=0;i<4;i++){
+        StringBuilder stringbuilder = new StringBuilder();
+        while ((k= reader.read() !=)) {
+            
+        }
+        
     }
     
 }
