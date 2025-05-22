@@ -4,13 +4,16 @@
 
 package fr.insa.hupka.atelier;
 
+import java.io.IOException;
+
 /**
  *
  * @author phupka01
  */
 public class ProjetAtelier {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws IOException {
+        Fiabilite rapportfiabilite = new Fiabilite();
+        rapportfiabilite.RapportFiabilite();
     }
 }
