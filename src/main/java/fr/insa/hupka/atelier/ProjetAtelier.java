@@ -14,6 +14,6 @@ public class ProjetAtelier {
 
     public static void main(String[] args) throws IOException {
         Fiabilite rapportfiabilite = new Fiabilite();
-        rapportfiabilite.RapportFiabilite();
+        
     }
 }

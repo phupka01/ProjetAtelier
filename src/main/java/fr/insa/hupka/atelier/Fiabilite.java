@@ -7,97 +7,151 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.FileReader;       
 import java.io.BufferedReader;
-import java.lang.StringBuilder;
+import java.util.ArrayList;
 /**
  *
  * @author llahorgue01 (eh ouais B-) )
  */
 public class Fiabilite {
-   private Machine[] tbmachine = new Machine[50];
-   private float[] tbdates = new float[50];
-   private float[] tbheure = new float[50];
-   private Operateur[] tboperateur = new Operateur[50];
-   private char[] tbevent = new char[50];
-   private String[] tbcause = new String[50];
+   private ArrayList<String> tbmachine;
+   private ArrayList<String> tbdates;
+   private ArrayList<String> tbheure;
+   private ArrayList<String> tboperateur;
+   private ArrayList<String> tbevent;
+   private ArrayList<String> tbcause;
    private static BufferedReader reader = null;
    private static String cheminacces;
    //Constructeur 
-
     public Fiabilite() {
     }
-   
     //GetSet
-    public Machine[] getTbmachine() {
+public ArrayList<String> getTbmachine(){
         return tbmachine;
-    }
+}
 
-    public void setTbmachine(Machine[] tbmachine) {
+    public void setTbmachine(ArrayList<String> tbmachine) {
         this.tbmachine = tbmachine;
     }
 
-    public float[] getTbdates() {
+    public ArrayList<String> getTbdates() {
         return tbdates;
     }
 
-    public void setTbdates(float[] tbdates) {
+    public void setTbdates(ArrayList<String> tbdates) {
         this.tbdates = tbdates;
     }
 
-    public float[] getTbheure() {
+    public ArrayList<String> getTbheure() {
         return tbheure;
     }
 
-    public void setTbheure(float[] tbheure) {
+    public void setTbheure(ArrayList<String> tbheure) {  
         this.tbheure = tbheure;
     }
 
-    public Operateur[] getTboperateur() {
+    public ArrayList<String> getTboperateur() {
         return tboperateur;
     }
 
-    public void setTboperateur(Operateur[] tboperateur) {
+    public void setTboperateur(ArrayList<String> tboperateur) {
         this.tboperateur = tboperateur;
     }
 
-    public char[] getTbevent() {
+    public ArrayList<String> getTbevent() {
         return tbevent;
     }
 
-    public void setTbevent(char[] tbevent) {
+    public void setTbevent(ArrayList<String> tbevent) {
         this.tbevent = tbevent;
     }
 
-    public String[] getTbcause() {
+    public ArrayList<String> getTbcause() {
         return tbcause;
     }
 
-    public void setTbcause(String[] tbcause) {
+    public void setTbcause(ArrayList<String> tbcause) {
         this.tbcause = tbcause;
     }
+
+    public static BufferedReader getReader() {
+        return reader;
+    }
+
+    public static void setReader(BufferedReader reader) {
+        Fiabilite.reader = reader;
+    }
+
+    public static String getCheminacces() {
+        return cheminacces;
+    }
+
+    //GetSet
+    public static void setCheminacces(String cheminacces) {
+        Fiabilite.cheminacces = cheminacces;
+    }
+
     //Méthodes
-public void RapportFiabilite() throws IOException{
-    try {
-        cheminacces = "SuiviMaintenance.txt";
-        reader = new BufferedReader(new FileReader(cheminacces));
-    }
-    catch(FileNotFoundException exc)
-    {
-     System.out.println("Fichier non trouvé");
-    }
-    int i;
-    int valeur;
-    for (i=0;i<4;i++){
-        StringBuilder stringbuilder = new StringBuilder();
-        while ((valeur = reader.read()) != -1) {
-            System.out.println(valeur);
+    public void RapportFiabilite(Fiabilite fiabilite) throws IOException {
+        try {
+            cheminacces = "alphabet.txt";
+            reader = new BufferedReader(new FileReader(cheminacces));
         }
-        
-        
-          
+        catch(FileNotFoundException exc)
+        {
+            System.out.println("Fichier non trouvé");
         }
-        
+        int i;
+        int j;
+        int k;
+        int valeur;
+        int position = 1;
+        ArrayList<String> temptb;
+        ArrayList<String> machexist = new ArrayList<String>();
+        machexist.add("Mach_1");
+        machexist.add("Mach_2");
+        machexist.add("Mach_3");
+        machexist.add("Mach_4");
+        machexist.add("Mach_5");      
+        for (i=0;i<12;i++){
+            StringBuilder contenu = new StringBuilder();
+            for (j=0; j<5;j++){
+                while ((valeur = reader.read()) != 59) {
+                    contenu.append((char) valeur);
+                }
+                if (j==0) {
+                    temptb = getTbdates();
+                    temptb.add(contenu.toString());
+                    setTbdates(temptb);  
+                }
+                if (j==1) {
+                    temptb = getTbheure();
+                    temptb.add(contenu.toString());
+                    setTbheure(temptb);  
+                }
+                if (j==2) {
+                    String currentmach = contenu.toString();
+                    boolean exists = false;
+                    for (k=0;k<5;k++){
+                        if (currentmach.equals(machexist.get(k))) {
+                            exists = true;
+                        }
+                    }
+                    if (exists==true) {
+                        temptb = getTbmachine();
+                    temptb.add(currentmach);
+                    setTbmachine(temptb);
+                        } else {
+                        System.out.println("attention : machine non trouvée !!");
+                        temptb = getTbmachine();
+                    temptb.add("erreur");
+                    setTbmachine(temptb);
+                    }
+                }
+                
+            }
+            
+        }
     }
-    
 }
     
    
