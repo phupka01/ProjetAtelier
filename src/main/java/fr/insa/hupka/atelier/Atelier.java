@@ -6,7 +6,7 @@ package fr.insa.hupka.atelier;
 
 /**
  *
- * @author phupka01
+ * @author lahor
  */
 public class Atelier {
     
