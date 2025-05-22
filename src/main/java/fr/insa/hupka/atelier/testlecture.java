@@ -4,16 +4,10 @@
  */
 package fr.insa.hupka.atelier;
 
-import java.io.IOException;
-
 /**
  *
  * @author lahor
  */
-public class Atelier {
+public class testlecture {
     
-        public static void main(String[] args) throws IOException {
-        Fiabilitetest rapportfiabilite = new Fiabilitetest();
-        rapportfiabilite.RapportFiabilite(rapportfiabilite);
-        }
 }

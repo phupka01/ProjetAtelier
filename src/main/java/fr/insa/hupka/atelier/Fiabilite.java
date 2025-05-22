@@ -93,19 +93,20 @@ public ArrayList<String> getTbmachine(){
     //Méthodes
     public void RapportFiabilite(Fiabilite fiabilite) throws IOException {
         try {
-            cheminacces = "alphabet.txt";
+            cheminacces = "SuiviMaintenance.txt";
             reader = new BufferedReader(new FileReader(cheminacces));
         }
         catch(FileNotFoundException exc)
         {
             System.out.println("Fichier non trouvé");
         }
+        
         int i;
         int j;
         int k;
         int valeur;
         int position = 1;
-        ArrayList<String> temptb;
+        ArrayList<String> temptb = new ArrayList <String>();
         ArrayList<String> machexist = new ArrayList<String>();
         machexist.add("Mach_1");
         machexist.add("Mach_2");
@@ -136,19 +137,42 @@ public ArrayList<String> getTbmachine(){
                             exists = true;
                         }
                     }
-                    if (exists==true) {
-                        temptb = getTbmachine();
+                     temptb = getTbmachine();
+                    if (exists==true) {                    
                     temptb.add(currentmach);
-                    setTbmachine(temptb);
                         } else {
                         System.out.println("attention : machine non trouvée !!");
-                        temptb = getTbmachine();
-                    temptb.add("erreur");
-                    setTbmachine(temptb);
+                    temptb.add("erreur");      
                     }
+                 setTbmachine(temptb);
+                }
+                if (j==3) {
+                    temptb = getTbevent();
+                    temptb.add(contenu.toString());
+                    setTbevent(temptb);  
+                }
+                 if (j==4) {
+                    temptb = getTboperateur();
+                    temptb.add(contenu.toString());
+                    setTboperateur(temptb);  
                 }
                 
             }
+            while ((valeur = reader.read()) != -1) {
+                    contenu.append((char) valeur);
+                    temptb = getTbcause();
+                    temptb.add(contenu.toString());
+                    setTbcause(temptb);
+                }
+
+        }
+        for (i=0;i<12;i++){
+            System.out.println(getTbcause());
+            System.out.println(getTbdates());
+            System.out.println(getTbheure());
+            System.out.println(getTbmachine());
+            System.out.println(getTboperateur());
+            System.out.println(getTbevent());
             
         }
     }
