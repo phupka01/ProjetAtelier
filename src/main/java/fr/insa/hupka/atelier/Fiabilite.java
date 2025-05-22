@@ -22,6 +22,10 @@ public class Fiabilite {
    private static BufferedReader reader = null;
    private static String cheminacces;
    //Constructeur 
+
+    public Fiabilite() {
+    }
+   
     //GetSet
     public Machine[] getTbmachine() {
         return tbmachine;
@@ -71,7 +75,7 @@ public class Fiabilite {
         this.tbcause = tbcause;
     }
     //Méthodes
-public static void main(String[] args){
+public void RapportFiabilite() throws IOException{
     try {
         cheminacces = "SuiviMaintenance.txt";
         reader = new BufferedReader(new FileReader(cheminacces));
@@ -81,9 +85,12 @@ public static void main(String[] args){
      System.out.println("Fichier non trouvé");
     }
     int i;
-    int k;
+    int valeur;
     for (i=0;i<4;i++){
         StringBuilder stringbuilder = new StringBuilder();
+        while ((valeur = reader.read()) != -1) {
+            System.out.println(valeur);
+        }
         
         
           
