@@ -68,15 +68,15 @@ public class Fiabilitetest {
             for (j=0;j<5;j++) {
                 while ((valeur = reader.read()) != 59) {
                     contenu.append((char) valeur);
-                    System.out.println("boucle");
+                    System.out.print("b");
                 }
                 if (j==0) {                    
                     tbdate.add(contenu.toString()); 
-                    System.out.println(tbdate.get(i));
+                    System.out.println("date");
                 }
                 if (j==1) {
                     tbheure.add(contenu.toString());
-                    System.out.println(tbheure.get(i));
+                    System.out.println("heure");
                 }
                 if (j==2) {
                     String currentmach = contenu.toString();
@@ -91,24 +91,26 @@ public class Fiabilitetest {
                     System.out.println("attention : machine non trouvée !!");
                     tbmachine.add("erreur");      
                     }
-                    System.out.println(tbmachine.get(i));
+                    System.out.println("mach");
                 }
                 if (j==3) {
                     tbevent.add(contenu.toString()); 
-                    System.out.println(tbevent.get(i));
+                    System.out.println("event");
                 }
                  if (j==4) {
                     tboperateur.add(contenu.toString());  
-                    System.out.println(tboperateur.get(i));
+                    System.out.println("oper");
                 }
             
             }
             while (((valeur = reader.read()) != 10)&&((valeur = reader.read()) != -1)) {
                     contenu.append((char) valeur);
                     tbcause.add(contenu.toString());
-                    System.out.println("boucle2");
+                    System.out.print("c");
                 }
+            System.out.println("cause");
             System.out.println(tbcause.get(i));
+                   
 
         }
         for (i=0;i<12;i++){
