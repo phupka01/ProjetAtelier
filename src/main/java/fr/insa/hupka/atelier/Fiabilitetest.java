@@ -36,6 +36,18 @@ public class Fiabilitetest {
     }
 
     //Méthodes
+    //sous-méthode de lecture
+    public static String LectureRapport(int caractererecherche, BufferedReader br) throws IOException {
+        int valeur;
+        String Chainelue;
+        StringBuilder contenu = new StringBuilder();
+        while ((valeur = br.read()) != caractererecherche) {
+                    contenu.append((char) valeur);                
+                }
+        Chainelue = contenu.toString();
+        System.out.println("Lu : "+Chainelue);
+        return Chainelue;
+    }
     public void RapportFiabilite(Fiabilitetest fiabilite) throws IOException {
         try {
             cheminacces = "SuiviMaintenance.txt";
@@ -49,7 +61,7 @@ public class Fiabilitetest {
         int i;
         int j;
         int k;
-        int valeur;
+        String currentread;
         ArrayList<String> tbdate = new ArrayList<String>();
         ArrayList<String> tbheure = new ArrayList<String>();
         ArrayList<String> tbcause = new ArrayList<String>();
@@ -62,69 +74,54 @@ public class Fiabilitetest {
         machexist.add("Mach_3");
         machexist.add("Mach_4");
         machexist.add("Mach_5");      
-        for (i=0;i<12;i++){
+        for (i=0;i<11;i++){
             
-            StringBuilder contenu = new StringBuilder();
+            
             for (j=0;j<5;j++) {
-                while ((valeur = reader.read()) != 59) {
-                    contenu.append((char) valeur);
-                    System.out.print("b");
-                }
-                if (j==0) {                    
-                    tbdate.add(contenu.toString()); 
+                currentread = LectureRapport(59,reader);
+                if (j==0) { 
+                    tbdate.add(currentread);
                     System.out.println("date");
+                    
                 }
                 if (j==1) {
-                    tbheure.add(contenu.toString());
+                    tbheure.add(currentread);
                     System.out.println("heure");
                 }
                 if (j==2) {
-                    String currentmach = contenu.toString();
                     boolean exists = false;
                     for (k=0;k<5;k++){
-                        if (currentmach.equals(machexist.get(k))) {
+                        if (currentread.equals(machexist.get(k))) {
                             exists = true;
-                            tbmachine.add(currentmach);
+                            tbmachine.add(currentread);
                         }
                     }
                     if (exists = false) {
                     System.out.println("attention : machine non trouvée !!");
                     tbmachine.add("erreur");      
-                    }
+                    }                                      
                     System.out.println("mach");
+                    System.out.println(tbmachine.get(i));
                 }
                 if (j==3) {
-                    tbevent.add(contenu.toString()); 
-                    System.out.println("event");
+                    tbevent.add(currentread); 
+                    System.out.println("event");  
                 }
                  if (j==4) {
-                    tboperateur.add(contenu.toString());  
+                    tboperateur.add(currentread);  
                     System.out.println("oper");
+                    
                 }
-            
             }
-            while (((valeur = reader.read()) != 10)&&((valeur = reader.read()) != -1)) {
-                    contenu.append((char) valeur);
-                    tbcause.add(contenu.toString());
-                    System.out.print("c");
-                }
-            System.out.println("cause");
-            System.out.println(tbcause.get(i));
-                   
-
-        }
-        for (i=0;i<12;i++){
-
-            System.out.println(tbdate.get(i));
-            System.out.println(tbheure.get(i));
-            System.out.println(tbmachine.get(i));
-            System.out.println(tboperateur.get(i));
-            System.out.println(tbevent.get(i));            
-            System.out.println(tbcause.get(i));
-            
-        }
+            currentread = LectureRapport(-1,reader);
+                    tbcause.add(currentread);                      
+                    System.out.println("cause");
+                    System.out.println(tbcause.get(i));
+        }             
     }
 }
+    
+
     
    
 
