@@ -1,4 +1,4 @@
-package phupka01.atelierjavafx;
+package phupka01.projetatelier;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
